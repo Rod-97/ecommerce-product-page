@@ -93,6 +93,12 @@ a {
   display: none;
 }
 
+.product-img-container {
+  .product-img {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   body {
     padding: 0 150px;
