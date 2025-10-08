@@ -14,18 +14,35 @@
 
     <title>Frontend Mentor | E-commerce product page</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="shadow"></div>
     <nav class="navbar">
       <div>
-        <img src="./images/icon-menu.svg" alt="Menu Icon" />
+        <img
+          class="hamburger-icon"
+          src="./images/icon-menu.svg"
+          alt="Hamburger Icon"
+        />
         <img src="./images/logo.svg" alt="Logo" />
       </div>
       <div>
         <img src="./images/icon-cart.svg" alt="Cart Icon" />
-        <img id="avatar" src="./images/image-avatar.png" alt="Avatar" />
+        <img class="avatar" src="./images/image-avatar.png" alt="Avatar" />
       </div>
+
+      <ul class="mobile-nav">
+        <img
+          class="close-icon"
+          src="./images/icon-close.svg"
+          alt="Close Icon"
+        />
+      </ul>
+
+      <ul class="desktop-nav"></ul>
     </nav>
+
     Collections Men Women About Contact Sneaker Company Fall Limited Edition
     Sneakers These low-profile sneakers are your perfect casual wear companion.
     Featuring a durable rubber outer sole, they’ll withstand everything the

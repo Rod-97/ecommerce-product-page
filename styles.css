@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+.shadow {
+  display: none;
+  width: 100vh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 2;
+}
+
+.shadow.active {
+  display: block;
+}
+
 .navbar {
   border: 3px solid red;
 
@@ -21,7 +34,39 @@
     gap: 15px;
   }
 
-  #avatar {
+  .avatar {
     height: 30px;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  z-index: 99;
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .mobile-nav,
+  .mobile-nav.active,
+  .shadow,
+  .shadow.active {
+    display: none;
   }
 }
