@@ -1,5 +1,6 @@
 handleNavbarEvents();
 handleDisplayedProductEvents();
+handleCounterEvents();
 
 function handleNavbarEvents() {
   const hamburgerIcon = document.querySelector(".hamburger-icon");
@@ -55,5 +56,26 @@ function handleDisplayedProductEvents() {
     const newProductIdx = selectedProductIdx + 1;
 
     productImages[newProductIdx].classList.add("selected");
+  });
+}
+
+function handleCounterEvents() {
+  const counterState = document.querySelector(".counter-state");
+  const minusIcon = document.querySelector(".minus-icon");
+  const plusIcon = document.querySelector(".plus-icon");
+
+  minusIcon.addEventListener("click", () => {
+    const currentCount = Number(counterState.textContent);
+    if (currentCount === 0) return;
+    counterState.textContent--;
+  });
+
+  plusIcon.addEventListener("click", () => {
+    const currentCount = Number(counterState.textContent);
+    if (currentCount === 999999) {
+      alert("C'mon... you're not that rich!");
+      return;
+    }
+    counterState.textContent++;
   });
 }
