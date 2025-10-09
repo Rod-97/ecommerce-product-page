@@ -2,6 +2,8 @@
   --very-dark-blue: hsl(220, 13%, 13%);
   --dark-grayish-blue: hsl(219, 9%, 45%);
   --primary-orange: hsl(26, 100%, 55%);
+  --lighter-orange: hsl(24, 100%, 64%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
 }
 
 * {
@@ -121,6 +123,116 @@ a {
 
   .next-icon {
     right: 15px;
+  }
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+
+  .subtitle {
+    color: var(--very-dark-blue);
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  h2 {
+    color: var(--very-dark-blue);
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  p {
+    color: var(--dark-grayish-blue);
+  }
+
+  .price {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    span:nth-child(1) {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    span:nth-child(2) {
+      background-color: var(--very-dark-blue);
+      color: white;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    span:nth-child(3) {
+      margin-left: auto;
+      margin-right: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--dark-grayish-blue);
+    }
+  }
+
+  .add-to-cart-btn,
+  .counter-container {
+    height: 50px;
+  }
+
+  .add-to-cart-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--primary-orange);
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    span {
+      font-size: 16px;
+      color: var(--very-dark-blue);
+    }
+
+    &:hover {
+      background-color: var(--lighter-orange);
+    }
+  }
+
+  .counter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--light-grayish-blue);
+    border-radius: 10px;
+
+    .counter-state {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .minus-icon,
+    .plus-icon {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+    }
   }
 }
 
