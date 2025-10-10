@@ -236,6 +236,38 @@ a {
   }
 }
 
+.cart-icon {
+  cursor: pointer;
+}
+
+.cart-container {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-radius: 10px;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 3%;
+
+  h3 {
+    color: var(--very-dark-blue);
+    font-weight: bold;
+    padding: 20px;
+  }
+
+  .cart-content {
+    color: var(--dark-grayish-blue);
+    border-top: 1px solid lightgray;
+    padding: 100px;
+  }
+}
+
+.cart-container.active {
+  display: block;
+}
+
 @media screen and (min-width: 1440px) {
   body {
     padding: 0 150px;

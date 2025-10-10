@@ -1,6 +1,11 @@
-handleNavbarEvents();
-handleDisplayedProductEvents();
-handleCounterEvents();
+main();
+
+function main() {
+  handleNavbarEvents();
+  handleDisplayedProductEvents();
+  handleCounterEvents();
+  handleCartEvent();
+}
 
 function handleNavbarEvents() {
   const hamburgerIcon = document.querySelector(".hamburger-icon");
@@ -77,5 +82,14 @@ function handleCounterEvents() {
       return;
     }
     counterState.textContent++;
+  });
+}
+
+function handleCartEvent() {
+  const cartIcon = document.querySelector(".cart-icon");
+  const cartContainer = document.querySelector(".cart-container");
+
+  cartIcon.addEventListener("click", () => {
+    cartContainer.classList.toggle("active");
   });
 }
