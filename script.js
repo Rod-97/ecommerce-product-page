@@ -100,7 +100,7 @@ function handleCartDisplayEvent() {
 
 function handleCartEvents(cart) {
   const addToCartBtn = document.querySelector(".add-to-cart-btn");
-  const trashBtn = document.querySelector(".trash-btn");
+  const trashIcon = document.querySelector(".trash-icon");
 
   addToCartBtn.addEventListener("click", () => {
     const counterState = document.querySelector(".counter-state");
@@ -109,7 +109,7 @@ function handleCartEvents(cart) {
     counterState.textContent = 0;
   });
 
-  trashBtn.addEventListener("click", () => {
+  trashIcon.addEventListener("click", () => {
     cart.reset();
     cart.render();
   });
