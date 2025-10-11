@@ -90,10 +90,10 @@ function handleCounterEvents() {
 }
 
 function handleCartDisplayEvent() {
-  const cartIcon = document.querySelector(".cart-icon");
+  const cartIconContainer = document.querySelector(".cart-icon-container");
   const cartModal = document.querySelector(".cart-modal");
 
-  cartIcon.addEventListener("click", () => {
+  cartIconContainer.addEventListener("click", () => {
     cartModal.classList.toggle("active");
   });
 }
