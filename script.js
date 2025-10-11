@@ -1,11 +1,13 @@
 import { Cart } from "./cart.js";
+import { Product } from "./product.js";
 
 main();
 
 function main() {
   const cart = new Cart();
+  const product = new Product();
   handleNavbarEvents();
-  handleDisplayedProductEvents();
+  handleDisplayedProductEvents(product);
   handleCounterEvents();
   handleCartDisplayEvent();
   handleCartEvents(cart);
@@ -30,58 +32,30 @@ function handleNavbarEvents() {
   });
 }
 
-function handleDisplayedProductEvents() {
+function handleDisplayedProductEvents(product) {
   const prevIcon = document.querySelector(".prev-icon");
   const nextIcon = document.querySelector(".next-icon");
   const productImages = [...document.querySelectorAll(".product-img")];
   const productThumbnails = document.querySelectorAll(".thumbnail-container");
 
   prevIcon.addEventListener("click", () => {
-    const selectedProduct = productImages.find((productImg) =>
-      productImg.classList.contains("selected")
-    );
-
-    const selectedProductIdx = Number(selectedProduct.dataset.number);
-
+    const selectedProductIdx = product.getSelectedProductIdx();
     if (selectedProductIdx === 0) return;
-
-    productImages[selectedProductIdx].classList.remove("selected");
-
     const newProductIdx = selectedProductIdx - 1;
-
-    productImages[newProductIdx].classList.add("selected");
+    product.selectNew(newProductIdx);
   });
 
   nextIcon.addEventListener("click", () => {
-    const selectedProduct = productImages.find((productImg) =>
-      productImg.classList.contains("selected")
-    );
-
-    const selectedProductIdx = Number(selectedProduct.dataset.number);
-
+    const selectedProductIdx = product.getSelectedProductIdx();
     if (selectedProductIdx === productImages.length - 1) return;
-
-    productImages[selectedProductIdx].classList.remove("selected");
-
     const newProductIdx = selectedProductIdx + 1;
-
-    productImages[newProductIdx].classList.add("selected");
+    product.selectNew(newProductIdx);
   });
 
   productThumbnails.forEach((productThumbnail) => {
     productThumbnail.addEventListener("click", () => {
-      const selectedProduct = productImages.find((productImg) =>
-        productImg.classList.contains("selected")
-      );
-
-      const selectedProductIdx = Number(selectedProduct.dataset.number);
       const newSelectedProductIdx = Number(productThumbnail.dataset.number);
-
-      productImages[selectedProductIdx].classList.remove("selected");
-      productThumbnails[selectedProductIdx].classList.remove("selected");
-
-      productImages[newSelectedProductIdx].classList.add("selected");
-      productThumbnails[newSelectedProductIdx].classList.add("selected");
+      product.selectNew(newSelectedProductIdx);
     });
   });
 }
