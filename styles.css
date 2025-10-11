@@ -413,4 +413,11 @@ a {
       height: 50px;
     }
   }
+
+  .cart-modal {
+    position: absolute;
+    width: 350px;
+    right: 100px;
+    top: 50px;
+  }
 }
