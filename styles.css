@@ -124,6 +124,10 @@ a {
   .next-icon {
     right: 15px;
   }
+
+  .product-thumbnails {
+    display: none;
+  }
 }
 
 .product-info {
@@ -378,6 +382,37 @@ a {
     flex-direction: row;
     gap: 50px;
     margin-top: 80px;
+    padding: 0 50px 50px 50px;
+
+    .product-img-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .prev-icon,
+      .next-icon {
+        display: none;
+      }
+
+      .product-img {
+        border-radius: 10px;
+        width: 400px;
+        height: 425px;
+      }
+
+      .product-thumbnails {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+
+        > * {
+          width: calc(25% - 15px);
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      }
+    }
 
     .product-info {
       display: flex;
