@@ -26,10 +26,11 @@ export class Cart {
       this.cartContent.classList.add("hidden");
       this.cartIconCount.textContent = "";
       return;
-    } else if (
-      this.count !== 0 &&
-      (!this.cartEmpty.classList.contains("hidden") ||
-        this.cartContent.classList.contains("hidden"))
+    }
+
+    if (
+      !this.cartEmpty.classList.contains("hidden") ||
+      this.cartContent.classList.contains("hidden")
     ) {
       this.cartEmpty.classList.add("hidden");
       this.cartContent.classList.remove("hidden");
