@@ -34,6 +34,7 @@ function handleDisplayedProductEvents() {
   const prevIcon = document.querySelector(".prev-icon");
   const nextIcon = document.querySelector(".next-icon");
   const productImages = [...document.querySelectorAll(".product-img")];
+  const productThumbnails = document.querySelectorAll(".thumbnail-container");
 
   prevIcon.addEventListener("click", () => {
     const selectedProduct = productImages.find((productImg) =>
@@ -65,6 +66,23 @@ function handleDisplayedProductEvents() {
     const newProductIdx = selectedProductIdx + 1;
 
     productImages[newProductIdx].classList.add("selected");
+  });
+
+  productThumbnails.forEach((productThumbnail) => {
+    productThumbnail.addEventListener("click", () => {
+      const selectedProduct = productImages.find((productImg) =>
+        productImg.classList.contains("selected")
+      );
+
+      const selectedProductIdx = Number(selectedProduct.dataset.number);
+      const newSelectedProductIdx = Number(productThumbnail.dataset.number);
+
+      productImages[selectedProductIdx].classList.remove("selected");
+      productThumbnails[selectedProductIdx].classList.remove("selected");
+
+      productImages[newSelectedProductIdx].classList.add("selected");
+      productThumbnails[newSelectedProductIdx].classList.add("selected");
+    });
   });
 }
 
