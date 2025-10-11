@@ -434,8 +434,10 @@ a {
             background-color: rgba(200, 200, 200, 0.5);
           }
 
-          .thumbnail-shadow.visible {
-            display: block;
+          &:hover {
+            .thumbnail-shadow {
+              display: block;
+            }
           }
         }
       }
