@@ -40,15 +40,14 @@ function handleDisplayedProductEvents(product) {
 
   prevIcon.addEventListener("click", () => {
     const selectedProductIdx = product.getSelectedProductIdx();
-    if (selectedProductIdx === 0) return;
-    const newProductIdx = selectedProductIdx - 1;
+    const newProductIdx =
+      (selectedProductIdx - 1 + productImages.length) % productImages.length;
     product.selectNew(newProductIdx);
   });
 
   nextIcon.addEventListener("click", () => {
     const selectedProductIdx = product.getSelectedProductIdx();
-    if (selectedProductIdx === productImages.length - 1) return;
-    const newProductIdx = selectedProductIdx + 1;
+    const newProductIdx = (selectedProductIdx + 1) % productImages.length;
     product.selectNew(newProductIdx);
   });
 
