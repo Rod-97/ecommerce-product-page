@@ -1,5 +1,5 @@
-import { Cart } from "./cart.js";
-import { Product } from "./product.js";
+import { Cart } from "./modules/cart.js";
+import { Product } from "./modules/product.js";
 
 main();
 
