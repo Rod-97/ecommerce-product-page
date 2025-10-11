@@ -14,7 +14,7 @@
 
     <title>Frontend Mentor | E-commerce product page</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
   </head>
   <body>
     <div class="shadow"></div>
@@ -37,6 +37,7 @@
 
       <div>
         <img class="cart-icon" src="./images/icon-cart.svg" alt="Cart Icon" />
+        <span class="cart-icon-count"></span>
         <img class="avatar" src="./images/image-avatar.png" alt="Avatar" />
       </div>
 
@@ -54,9 +55,14 @@
       </ul>
     </nav>
 
-    <div class="cart-container">
+    <div class="cart-modal">
       <h3>Cart</h3>
-      <div class="cart-content">Your cart is empty</div>
+      <div class="cart-empty">Your cart is empty</div>
+      <div class="cart-content hidden">
+        <div class="cart-modal-count">7</div>
+        <div class="cart-modal-price">$89</div>
+        <div class="trash-btn">Trash</div>
+      </div>
     </div>
 
     <main>

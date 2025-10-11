@@ -1,10 +1,14 @@
+import { Cart } from "./cart.js";
+
 main();
 
 function main() {
+  const cart = new Cart();
   handleNavbarEvents();
   handleDisplayedProductEvents();
   handleCounterEvents();
-  handleCartEvent();
+  handleCartDisplayEvent();
+  handleCartEvents(cart);
 }
 
 function handleNavbarEvents() {
@@ -85,11 +89,28 @@ function handleCounterEvents() {
   });
 }
 
-function handleCartEvent() {
+function handleCartDisplayEvent() {
   const cartIcon = document.querySelector(".cart-icon");
-  const cartContainer = document.querySelector(".cart-container");
+  const cartModal = document.querySelector(".cart-modal");
 
   cartIcon.addEventListener("click", () => {
-    cartContainer.classList.toggle("active");
+    cartModal.classList.toggle("active");
+  });
+}
+
+function handleCartEvents(cart) {
+  const addToCartBtn = document.querySelector(".add-to-cart-btn");
+  const trashBtn = document.querySelector(".trash-btn");
+
+  addToCartBtn.addEventListener("click", () => {
+    const counterState = document.querySelector(".counter-state");
+    cart.add(Number(counterState.textContent));
+    cart.render();
+    counterState.textContent = 0;
+  });
+
+  trashBtn.addEventListener("click", () => {
+    cart.reset();
+    cart.render();
   });
 }

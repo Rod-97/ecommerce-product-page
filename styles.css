@@ -240,7 +240,7 @@ a {
   cursor: pointer;
 }
 
-.cart-container {
+.cart-modal {
   display: none;
   position: absolute;
   z-index: 98;
@@ -257,14 +257,27 @@ a {
     padding: 20px;
   }
 
-  .cart-content {
+  .cart-empty {
+    display: block;
     color: var(--dark-grayish-blue);
     border-top: 1px solid lightgray;
     padding: 100px;
   }
+
+  .cart-empty.hidden {
+    display: none;
+  }
+
+  .cart-content {
+    display: block;
+  }
+
+  .cart-content.hidden {
+    display: none;
+  }
 }
 
-.cart-container.active {
+.cart-modal.active {
   display: block;
 }
 
