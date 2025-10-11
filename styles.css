@@ -276,6 +276,7 @@ a {
   margin-left: 3%;
   margin-right: 3%;
   margin-top: 3%;
+  border: 3px solid var(--primary-orange);
 
   h3 {
     color: var(--very-dark-blue);
